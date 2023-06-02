@@ -53,7 +53,6 @@ class Tests(unittest.TestCase):
             'year': 1937
         })
 
-        # TODO test the book entity returned for the correct values
         # Cheks if there was no problem with the Request
         self.assertEqual(response.status_code, 201)
 
@@ -64,7 +63,6 @@ class Tests(unittest.TestCase):
             'year': 1954
         })
 
-        # TODO test the book entity returned for the correct values
         # Cheks if there was no problem with the Request
         self.assertEqual(response.status_code, 201)
 
@@ -76,8 +74,6 @@ class Tests(unittest.TestCase):
         read_url = self.get_url(self.BASE_URL, self.CATALOG_PATH)
         # Makes the Request
         response = requests.get(read_url)
-
-        # TODO test the book entities returned for the correct values (2 books above)
 
         # Checks if there was not an error in the Server
         self.assertEqual(response.status_code, 200)
@@ -96,8 +92,6 @@ class Tests(unittest.TestCase):
             'year': 1937
         })
 
-        # TODO test the book entity returned for the correct values (new author)
-
         # Tests if there was no Error in the Server
         self.assertEqual(response.status_code, 200)
 
@@ -110,7 +104,6 @@ class Tests(unittest.TestCase):
         # Makes the Request
         response = requests.delete(delete_url)
 
-        # TODO get new catalog and test that the book was deleted
         # Checks if there was no Mistakes in the Server
         self.assertEqual(response.status_code, 200)
 
@@ -125,8 +118,6 @@ class Tests(unittest.TestCase):
         # Makes the Request
         response = requests.get(get_url_)
 
-        # TODO check books that left in inventory and their quantities
-
         # Checks if the Operation was successful, in the Server
         self.assertEqual(response.status_code, 200)
 
@@ -138,8 +129,6 @@ class Tests(unittest.TestCase):
         get_single_url = self.get_url(self.BASE_URL, self.INVENTORY_PATH + '/1')
         # Makes the Request
         response = requests.get(get_single_url)
-
-        # TODO check if that's the book we expect (Lord of the Rings)
 
         # Checks if the Operatiuon was succesful in the Server
         self.assertEqual(response.status_code, 200)
@@ -155,8 +144,6 @@ class Tests(unittest.TestCase):
             'quantity': 20,
         })
 
-        # TODO check if the quantity was updated by getting the inventory again
-
         # Checks if the Operatiuon was succesful in the Server
         self.assertEqual(response.status_code, 200)
 
@@ -169,7 +156,6 @@ class Tests(unittest.TestCase):
         # Makes the Request
         response = requests.get(get_url_)
 
-        # TODO check if the order is empty
         # Checks if the Operatiuon was succesful in the Server
         self.assertEqual(response.status_code, 200)
 
@@ -184,7 +170,6 @@ class Tests(unittest.TestCase):
             'quantity': 1,
         })
 
-        # TODO check if the order was created by getting the order again
         # Checks if the Operatiuon was succesful in the Server
         self.assertEqual(response.status_code, 200)
 
